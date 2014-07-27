@@ -14,7 +14,7 @@ var pageLocation = {
   onRefresh:function() {
     lastPage = localStorage.getItem("pageLocation");
     $(".ideaName").html(localStorage.getItem("projectName"));
-    if(lastPage.toString() == 'null')
+    if(lastPage == null)
     {
       lastPage ='.startCover, .start';
     }
