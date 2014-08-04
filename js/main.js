@@ -2,33 +2,6 @@
 $(document).ready(function() {
   var height;
   var width;
-  var lastPage;
-
-//find out what was the last page before reload
-var pageLocation = {
-  init:function() {
-    this.onRefresh();
-    this.golandPage();
-  },
-
-  onRefresh:function() {
-    lastPage = localStorage.getItem("pageLocation");
-    $(".ideaName").html(localStorage.getItem("projectName"));
-    if(lastPage == null)
-    {
-      lastPage ='.startCover, .start';
-    }
-    $(lastPage).show();
-  },
-
-  golandPage:function(){
-    $(".logo").click(function(){
-        $(lastPage).fadeOut(200);
-        $('.startCover, .start').fadeIn(200);
-        localStorage.setItem("pageLocation",".startCover, .start");
-    });
-  }
-};
 
 
 var setHeight = {
@@ -38,76 +11,89 @@ var setHeight = {
   setDem:function() {
     height = $(window).height();
     width = $(window).width();
-    $(".start").css("height",height);
-    $(".startCover").css("height",height);
     $(".panel").css("height",height);
+    height = height -250;
+    $(".backLayer").css("height",height);
   }
 };
 
-var sampleNames = {
+var pagination = {
   init:function() {
-    this.placeHolderSwitch();
+    this.position();
   },
-
-  placeHolderSwitch:function(){
-    var counter = 0;
-    setInterval(
-          function() 
-          {
-            var names = ["yik yak","SherpaDesk","Facebook","Uber","Space-X","Bitcoin","Creative Loot"];
-            //$("#nameInput").attr("placeholder").fadeOut("slow");
-            $("#nameInput").attr("placeholder",names[counter]);
-            counter++;
-            if(counter > 2){counter =0;}
-            setTimeout(
-              function() 
-              {
-                //$("#nameInput").attr("placeholder").fadeIn("slow");
-              }, 400);
-
-          }, 2500);
+  position:function() {
+    var currentTile = ".pagination li:nth-child(1)";
+    $(window).scroll(function(){
+      var scrollPos = $(window).scrollTop();
+      //tile #1
+      if(scrollPos > 0 && scrollPos < 500) 
+      {
+        $(currentTile).find('.active').empty();
+        $(currentTile).find('.active').removeClass();
+        $(currentTile).removeClass("activeTab");
+        //next tile
+        currentTile = ".pagination li:nth-child(1)";
+        $(currentTile).addClass("activeTab");
+        $(currentTile).find('div').addClass('active');
+        $('.active').html('1');
+      } 
+      //tile #2
+      if(scrollPos > 500 && scrollPos < 1000) 
+      {
+        $(currentTile).find('.active').empty();
+        $(currentTile).find('.active').removeClass();
+        $(currentTile).removeClass("activeTab");
+        //next tile
+        currentTile = ".pagination li:nth-child(2)";
+        $(currentTile).addClass("activeTab");
+        $(currentTile).find('div').addClass('active');
+        $('.active').html('2');
+      } 
+      //tile #3
+      if(scrollPos > 1000 && scrollPos < 1500) 
+      {
+        $(currentTile).find('.active').empty();
+        $(currentTile).find('.active').removeClass();
+        $(currentTile).removeClass("activeTab");
+        //next tile
+        currentTile = ".pagination li:nth-child(3)";
+        $(currentTile).addClass("activeTab");
+        $(currentTile).find('div').addClass('active');
+        $('.active').html('3');
+      } 
+    });
   }
 };
 
-
-var changePanel = {
+var continueButton = {
   init:function() {
-    this.landingpage();
+    this.nextTile();
   },
-
-  landingpage:function() {
-    $(".powerButton").click(function(){
-      localStorage.setItem("projectName",$("#nameInput").val());
-      $(".ideaName").html(localStorage.getItem("projectName"));
-      $(".description").fadeIn();
-      $(".start, .startCover").fadeOut();
-      localStorage.setItem("pageLocation",".description");
+  nextTile:function() {
+    // to tile 2
+    $('#tile1').click(function(){
+      $('html,body').animate({
+          scrollTop: 700
+        }, 1000);
+    });
+    //to tile 3
+    $('#tile2').click(function(){
+      $('html,body').animate({
+          scrollTop: 1400
+        }, 1000);
     });
   }
 
 };
 
-var helper = {
-  init:function() {
-    this.disapear();
-  },
 
-  disapear:function() {
-    $(".helperNote").mouseleave(function(){
-      $(".helperNote").fadeOut();
-    });
-  }
-};
 
 
 
   (function() {
-    pageLocation.init();
     setHeight.init();
-    sampleNames.init();
-    changePanel.init();
-    helper.init();
-
+    pagination.init();
+    continueButton.init();
   }()); 
 
 }); 

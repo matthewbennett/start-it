@@ -6,6 +6,7 @@
     <title>Start It</title>
     <!-- Main stylesheet -->
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/hover.css" />
 
     <!-- Fonts -->
     
@@ -20,42 +21,46 @@
     <link rel="shortcut icon" href="">
   </head>
   <body>
-    <!-- landingPage -->
-    <span id="landingPage">
-      <div class="panel start"></div>
-      <div class="startCover">
-        <h1><span>START IT</span> BY ORGANIZING YOUR START UP IDEA</h1>
-        <h3>First step in making your idea a reality is giving it a Name</h3>
-        <div class="nameInput">
-          <textarea id="nameInput" placeholder="Bitcoin"></textarea>
-          <div class="powerButton">
-            <i class="fa fa-power-off"></i>
-          </div>
-        </div>
-      </div>
-    </span>
+    <!-- landing page --> 
 
-    <!-- description page -->
-    <div class="panel description">
-      <h1 class="logo">START IT</h1>
-      <div class="sideNav">
-        <h3 class="ideaName">Terminus</h3>
-        <ul>
-          <li>Project</li>
-          <li>Description</li>
-          <li>Chanels</li>
-          <li>Funding</li>
-        </ul>
+
+    <!-- App page -->
+    <div class="panel">
+    <div class="head">
+      <h3>Project July 26<sup>th</sup></h3>
+      <div class="menuButton">
+        <i class="fa fa-wrench"></i>
       </div>
-      <div class="descriptionInputWrapper">
-        <h3>Description</h3>
-        <textarea></textarea>
-      </div>
-      <div class="helperNote">
-        <p>Short descriptions are sometimes better! A simple idea is worth more than gold</p>
-      </div>
+    </div>
+   
+      <ul class="pagination">
+        <li class="activeTab"><div class="active"> 1</div></li>
+        <li><div></div></li>
+        <li><div></div></li>
+      </ul>
+      <section class="infoBlock">
+        <div class="infoTile">
+          <h1>Description</h1>
+          <textarea placeholder="simple & to the point..."></textarea>
+          <div id="tile1" class="continue">continue</div>
+        </div>
+        <div class="emptyTile"></div>
+        <div class="infoTile">
+          <h1>Pain Points</h1>
+          <textarea placeholder="this solution for what problem..."></textarea>
+          <div id="tile2" class="continue">continue</div>
+        </div>
+        <div class="emptyTile"></div>
+        <div class="infoTile">
+          <h1>Customers</h1>
+          <textarea placeholder="What is your target Customer..."></textarea>
+          <div class="continue">continue</div>
+        </div>
+        <div class="emptyTile"></div>
+      </section>
 
     </div>
+
 </body>
 
   </html>

@@ -30,212 +30,141 @@ body {
   width: 100%;
 }
 
-/*============
-    panel 
-=============*/
-
 .panel {
   width: 100%;
-  height: 100%;
+  overflow: auto;
 }
 
-.panelCover {
+.head {
   width: 100%;
-  height: 900px;
-  position: absolute;
-  top: 0px;
-  background-color: rgba(166, 180, 255, 0.5)
-}
-
-/*============
-    start
-=============*/
-
-.start {
-  background: url(../img/taxi.jpg) no-repeat center center fixed;
-  width: 100%;
-  height: 900px;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  display: none;
-}
-
-.startCover {
-  width: 100%;
-  height: 900px;
-  position: absolute;
-  top: 0px;
-  background-color: rgba(126, 127, 133, 0.5);
-  display: none;
-}
-
-.startCover h1 {
-  color: #fff;
-  text-align: center;
-  margin-top: 15%;
-  font-size: 60px;
-  letter-spacing: -3px;
-}
-
-.startCover h1 span {
-  font-weight: 400 !important;
-  color: #DB4F4F;
-  letter-spacing: -3px;
-}
-
-.startCover h3 {
-  color: #fff;
-  text-align: center;
-  margin-top: 50px;
-  font-size: 30px;
-}
-
-.startCover textarea {
-  border: none;
-  resize: none;
-  width: 350px;
-  height: 45px;
-  background-color: #fff;
-  display: block;
-  padding-left: 10px;
-  line-height: 45px;
-  font-size: 18px;
-  float: left;
-}
-
-.powerButton {
-  width: 50px;
-  height: 49.5px;
+  height: 250px;
   background-color: #DB4F4F;
+  overflow: auto;
+  position: fixed;
+}
+
+.head h3 {
   color: #fff;
-  display: block;
+  margin-left: 35px;
+  margin-top: 30px;
   float: left;
-  border-top-right-radius: 60% 85%;
-border-bottom-right-radius: 60% 85%;
 }
 
-.powerButton i {
-  font-size: 43px;
-  text-align: center;
-  /* margin: 0 auto; */
-  display: block;
-  margin-top: 4px;
-
-}
-
-.nameInput {
-  margin: 20px auto;
-  display: block;
-  width: 430px;
-}
-
-/*============
-  sideNav
-=============*/
-.logo {
-  color: #DB4F4F;
+.menuButton {
   float: right;
-  font-size: 20px;
-  margin-right: 10px;
-  margin-top: 10px;
-  letter-spacing: -3px;
+  width: 30px;
+  height: 30px;
+  background-color: #E1FF06;
+  border-radius: 100%;
+  margin-right: 35px;
+  margin-top: 30px;
 }
 
-.sideNav {
-  width: 16%;
-  max-width: 350px;
-  min-width: 200px;
-  height: 100%;
-  background-color: #DB4F4F;
-  float: left;
+.menuButton i {
+text-align: center;
+display: block;
+margin-top: 6px;
+color: #DB4F4F;
 }
 
-.sideNav h3 {
-  color: #fff;
-  text-align: center;
-  margin-top: 20px;
-  font-size: 30px;
-  padding-bottom: 25px;
-  width: 85%;
-  margin: 30px auto;
+.backLayer {
+width: 100%;
+height: 450px;
+background-color: #eee;
+position: static;
 }
 
-.sideNav ul {
-  width: 100%;
-  margin-top: -25px;
-  list-style-type: none;
-}
-
-.sideNav li {
-width: 85%;
-height: 50px;
-float: left;
-color: #fff;
-padding-left: 10px;
-font-size: 20px;
-border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-line-height: 50px;
-margin-left: 8px;
-}
-
-.sideNav li:first-child {
-  border-top: 1px solid rgba(255, 255, 255, 0.3);
-}
-
-/*============
-  description
-=============*/
-
-.description {
-  background-color: #eee;
-  overflow: auto;
-  display: none;
-}
-
-.descriptionInputWrapper {
-  width: 60%;
-  height: 300px;
-  border: 5px solid #DB4F4F;
-  display: block;
-  margin: 100px auto;
-}
-
-.descriptionInputWrapper h3 {
-  color: #fff;
-  background-color: #DB4F4F;
-  width: 100%;
-  height: 40px;
-  display: block;
-  line-height: 40px;
-}
-
-.descriptionInputWrapper textarea {
-  width: 99.3%;
-  height: 84%;
-  resize: none;
-  border: none;
-  font-size: 20px;
-}
-
-.helperNote {
-  width: 13%;
-  background-color: rgba(119, 111, 111, 0.5);
-  color: #fff;
+.infoBlock {
+  width: 75%;
+  height: 2500px;
   position: absolute;
-  top: 188px;
-  left: 84%;
-  font-size: 17px;
-  overflow: auto;
+  left: 15%;
+  top: 16%;
 }
 
-.helperNote p {
+.infoTile {
+  overflow: auto;
+  width: 100%;
+  height: 500px;
+  background-color: #fff;
+  box-shadow: 6px 3px 10px #888888;
+}
+
+.infoTile h1 {
+  color: #B1ADAD;
+  border-bottom: 1px solid #B1ADAD;
   width: 90%;
   margin: 20px auto;
   display: block;
+  padding-bottom: 20px;
 }
 
+.infoTile textarea {
+  width: 90%;
+  height: 330px;
+  resize:none;
+  border: 0px;
+  margin: 0 auto;
+  display: block;
+  color: #3d4351;
+  font-size: 18px;
+}
+
+.continue {
+  width: 150px;
+  height: 50px;
+  background-color: #DB4F4F;
+  color: #fff;
+  text-align: center;
+  line-height: 50px;
+  display: block;
+  float: right;
+  margin-right: 55px;
+}
+
+.emptyTile {
+  width: 100%;
+  height: 200px;
+}
+
+.pagination {
+width: 50px;
+height: 700px;
+list-style-type: none;
+float: right;
+margin-top: 270px;
+position: fixed;
+margin-left: 96%;
+}
+
+.pagination li {
+  width: 100%;
+  height: 20px;
+  float: left; 
+}
+
+.pagination li div {
+  margin-top: 30px;
+  width: 10px;
+  height: 10px;
+  border-radius: 100%;
+  background-color: rgba(174, 168, 211, 0.57);
+}
+
+.activeTab {
+  height: 40px !important;
+}
+
+.active {
+  width: 30px !important;
+  height: 30px !important;
+  background-color: #eee !important;
+  border: 1px solid rgba(174, 168, 211, 0.57);
+  text-align: center;
+  line-height: 30px !important;
+  margin-left: -12px;
+  color: rgba(174, 168, 211, 0.57);
+}
 
 
 
